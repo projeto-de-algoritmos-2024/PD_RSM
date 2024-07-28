@@ -7,7 +7,7 @@
 |Matrícula | Aluno |
 | -- | -- |
 | 20/0059980  |  Pedro Miguel Martins de Oliveira dos Santos |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 19/0097043  |  Yves Gustavo Ribeiro Pimenta |
 
 ## Sobre 
 
