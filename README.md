@@ -1,7 +1,7 @@
 # Rooms Schedule Manager (RSM)
 
 **Número da Lista**: X<br>
-**Conteúdo da Disciplina**: XXXXXXXXXX<br>
+**Conteúdo da Disciplina**: Algoritmos ambiciosos<br>
 
 ## Alunos
 |Matrícula | Aluno |
@@ -15,16 +15,26 @@ Temos como objetivo organizar a escala de algumas ou todas as salas da Faculdade
 
 Como funciona?
 
+- Realizamos a ordenação das atividades por quick sort
+- Depois, realizamos a organização das atividades por meio do interval scheduling
+
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+
+![Início](./PD-RSM/src/assets/p1.PNG)
+
+![Aulas de exemplo](./PD-RSM/src/assets/p2.PNG)
+
+![Resultado](./PD-RSM/src/assets/p3.PNG)
 
 ## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+**Linguagem**: JavaScript<br>
+**Framework**: ViteJS<br>
+
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+
+- Rode npm install na pasta PD-RSM
+- Depois rode npm run dev que gerará o site
 
 ## Outros 
 Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
