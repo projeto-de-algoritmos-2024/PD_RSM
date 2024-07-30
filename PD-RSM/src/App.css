@@ -5,6 +5,11 @@
   text-align: center;
 }
 
+div #head {
+  font-size: 40px;
+  font-weight: bolder;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -40,3 +45,19 @@
 .read-the-docs {
   color: #888;
 }
+
+
+div {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+input {
+  margin: 5px;
+}
+.task-item {
+  margin: 10px 0;
+}
+.task-item button {
+  margin-left: 10px;
+}
+      
