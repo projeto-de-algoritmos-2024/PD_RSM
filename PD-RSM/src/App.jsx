@@ -6,6 +6,7 @@ function App() {
   const [taskName, setTaskName] = useState('');
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
+  const [nonOverlappingTasks, setNonOverlappingTasks] = useState([]);
 
   function addTask() {
     if (taskName && startTime && endTime) {
@@ -54,6 +55,21 @@ function App() {
     setTasks(sortedTasks);
   }
 
+  function filterNonOverlappingTasks() {
+    const sortedTasks = [...tasks].sort((a, b) => a.endTime.localeCompare(b.endTime));
+    const result = [];
+    let lastEndTime = '';
+
+    sortedTasks.forEach(task => {
+      if (task.startTime >= lastEndTime) {
+        result.push(task);
+        lastEndTime = task.endTime;
+      }
+    });
+
+    setNonOverlappingTasks(result);
+  }
+
   return (
     <>
       <div id='head'>
@@ -78,9 +94,9 @@ function App() {
           onChange={(e) => setEndTime(e.target.value)}
           placeholder="Horário de Término"
         />
-        <button onClick={addTask}>Add Class</button>
+        <button onClick={addTask}>Adicionar atividade</button>
       </div>
-      <h2>Classes</h2>
+      <h2>Atividades da sala</h2>
       <ul>
         {tasks.map((task, index) => (
           <li key={index} className='task-item'>
@@ -89,7 +105,16 @@ function App() {
           </li>
         ))}
       </ul>
-      <button onClick={sortTasksByEndTime}>Ordenar por Horário de Término</button>
+      <button onClick={sortTasksByEndTime}>Ordenar lista</button>
+      <button onClick={filterNonOverlappingTasks}>Mostrar Atividades organizadas</button>
+      <h2>Melhor organização da sala:</h2>
+      <ul>
+        {nonOverlappingTasks.map((task, index) => (
+          <li key={index} className='task-item'>
+            {`${task.taskName} - Início: ${task.startTime} - Término: ${task.endTime}`}
+          </li>
+        ))}
+      </ul>
     </>
   );
 }
